@@ -1,8 +1,6 @@
 FROM ubuntu:18.04
-ENV TZ=Europe/Moscow
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 ADD requirements.txt /tmp/
-WORKDIR /opt/webapp
+WORKDIR /opt/webapp/
 ADD app.py /opt/webapp/
 ADD Procfile /opt/webapp/
 ADD tests.py /opt/webapp/
